@@ -1,0 +1,34 @@
+🚀 **ANN Capstone Project – Hotel Booking Status Prediction**
+
+I’m excited to share my **Artificial Neural Network (ANN) Capstone Project: Hotel Booking Status Prediction**! 🏨📊
+
+The objective of this project was to build a deep learning classification model capable of predicting whether a hotel booking would be **canceled or not canceled** based on various booking-related features.
+
+🔹 **Project Workflow:**
+
+✅ **Data Exploration:** Loaded and explored the Hotel Reservations dataset, analyzed the target variable, checked missing values, and understood the data distribution.
+
+✅ **Feature Engineering:** Created meaningful features such as:
+• `total_nights` = weekend nights + week nights
+• `total_guests` = adults + children
+
+✅ **Data Preprocessing:** Removed unnecessary columns, separated numerical and categorical features, applied **StandardScaler** to numerical variables, and used **OrdinalEncoder** for categorical variables. The target variable was encoded using **LabelEncoder**.
+
+✅ **ANN Model:** Developed a neural network using **TensorFlow/Keras** with:
+• Dense layer – 256 neurons
+• Dense layer – 128 neurons
+• Dense layer – 64 neurons
+• ReLU activation
+• Dropout layers to reduce overfitting
+• Batch Normalization for stable training
+• Sigmoid output layer for binary classification
+
+⚙️ The model was compiled using the **Adam optimizer** and **Binary Cross-Entropy loss** and trained with validation data and **Early Stopping**.
+
+📈 **Model Evaluation:** Evaluated the model using **Test Accuracy, ROC-AUC, Confusion Matrix, and Classification Report**, along with training and validation accuracy/loss visualizations.
+
+This project helped me strengthen my practical understanding of **Artificial Neural Networks, feature engineering, preprocessing, deep learning model building, overfitting prevention, and classification evaluation**.
+
+A big step forward in my **Data Science learning journey! 🚀**
+
+#DataScience #MachineLearning #DeepLearning #ANN #ArtificialNeuralNetwork #TensorFlow #Python #HotelBookingPrediction #DataAnalytics #AI #DataScientist #MachineLearningProjects #CapstoneProject
