@@ -1,0 +1,32 @@
+🚀 **Project Highlight: Emotion Detection from Text using Deep Learning**
+
+I’m excited to share my latest **NLP & Deep Learning project — Emotion Detection from Text**, where I developed a deep learning model to identify emotions expressed in text.
+
+🎯 **Project Objective**
+The goal was to move beyond simple positive/negative sentiment classification and automatically identify **6 emotions: Anger, Fear, Joy, Love, Sadness, and Surprise**.
+
+🔍 **Approach & Key Steps**
+• Cleaned and normalized text using Regular Expressions
+• Removed URLs, mentions, special characters, and duplicate text
+• Applied tokenization and sequence padding
+• Encoded emotion labels using Label Encoding
+• Built a deep learning architecture using **Embedding + GRU layers + Dropout + Softmax**
+• Used Early Stopping and validation during training
+• Evaluated performance using Accuracy, ROC-AUC, Confusion Matrix, and Classification Report
+
+📊 **Model Performance**
+✅ Test Accuracy: **93.10%**
+✅ Test ROC-AUC: **0.9971**
+✅ Weighted F1-Score: **0.93**
+
+💡 **Project Impact**
+This project demonstrates how NLP and deep learning can transform unstructured text into actionable emotional insights. A solution like this can support **customer feedback analysis, social media monitoring, product review analysis, and understanding user opinions at scale**, helping organizations make more data-driven decisions.
+
+🧠 **What I Learned**
+This project strengthened my practical skills in **NLP preprocessing, sequence modeling, GRU architecture, multi-class classification, model evaluation, and deep learning workflows**.
+
+🛠️ **Tech Stack:**
+Python | Pandas | NumPy | Scikit-learn | TensorFlow | Keras | NLP | Deep Learning
+
+I’m open to opportunities in **Data Science | Machine Learning | NLP | AI**.
+
