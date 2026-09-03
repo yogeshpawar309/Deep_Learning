@@ -1,0 +1,25 @@
+🚀 **Project Highlight | Sentiment Analysis Using LSTM**
+
+I’m pleased to share one of my recent **Natural Language Processing (NLP) projects: Sentiment Analysis using LSTM (Long Short-Term Memory)**.
+
+🎯 **Objective**
+Develop a Deep Learning model to analyze textual data and classify movie reviews based on sentiment. I used the **IMDb Movie Reviews Dataset**, which contains 50,000 labeled reviews.
+🔍 **Key Technical Implementation**
+• Performed text preprocessing and data preparation
+• Applied **Tokenization and Sequence Padding**
+• Built word representations using an **Embedding Layer**
+• Designed an **LSTM-based neural network** for sequential text learning
+• Used **Dropout layers** to help reduce overfitting
+• Evaluated the model using classification and performance metrics
+
+🏗️ **Model Architecture**
+**Embedding → Dropout → LSTM → Dropout → Dense (Sigmoid)**
+
+💡 **Key Takeaways**
+This project strengthened my practical understanding of **NLP, Deep Learning, text preprocessing, sequence modeling, and LSTM architectures**. More importantly, it gave me hands-on experience in taking a real-world text classification problem from dataset preparation through model development and evaluation.
+
+I’m actively building my portfolio in **Data Science, Machine Learning, NLP, and Generative AI**, and looking forward to applying these skills to real-world business problems.
+
+🔗 Open to opportunities and collaborations in **Data Analytics | Data Science | Machine Learning | NLP**
+
+
