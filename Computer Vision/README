@@ -1,0 +1,136 @@
+# CNN Age-Group Classification from Face Images
+
+## Project Overview
+
+This project uses a **Convolutional Neural Network (CNN)** to classify face images into age groups. It uses TensorFlow/Keras to prepare image datasets, train a CNN model, and evaluate its performance on test images.
+
+The notebook demonstrates an end-to-end deep learning workflow, from downloading the dataset to visualizing training results and comparing an image's actual label with the model's prediction.
+
+## Objectives
+
+- Load and prepare face images for classification.
+- Split the training data into training and validation sets.
+- Build and train a CNN using Keras.
+- Evaluate the trained model on a test dataset.
+- Visualize training/validation accuracy and loss.
+- Display an example prediction alongside its actual class.
+
+## Technologies Used
+
+- Python
+- TensorFlow
+- Keras
+- NumPy
+- Matplotlib
+- KaggleHub / Kaggle dataset tools
+- Jupyter Notebook or Google Colab
+
+## Dataset
+
+The notebook uses the Kaggle dataset **Age Detection Human Faces (18–60 Years)**:
+
+[Open the dataset on Kaggle](https://www.kaggle.com/datasets/trainingdatapro/age-detection-human-faces-18-60-years)
+
+The notebook expects the extracted dataset to contain `train` and `test` directories, organized into class-specific subdirectories. Keras infers class labels from those directory names.
+
+> Note: The notebook's output layer contains five classes. Confirm that the dataset's folder names and number of classes match this configuration before training.
+
+## Model Architecture
+
+The CNN model includes:
+
+1. **Input layer:** RGB images resized to `224 × 224`.
+2. **Data augmentation:** Random rotation and random zoom.
+3. **Rescaling:** Pixel values are scaled by `1/255`.
+4. **Convolutional layers:** Three `Conv2D` layers with 128, 256, and 512 filters, each followed by max pooling.
+5. **Classification layers:** Flatten layer and dense layers with 256, 128, and 64 units.
+6. **Output layer:** Five units with softmax activation.
+
+### Training configuration
+
+| Setting | Value |
+|---|---|
+| Image size | 224 × 224 |
+| Batch size | 16 |
+| Validation split | 20% of the training directory |
+| Optimizer | Adam |
+| Loss function | Categorical cross-entropy |
+| Metric | Accuracy |
+| Epochs | Up to 50 |
+
+## Installation and Setup
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repository-url>
+cd <your-repository-folder>
+```
+
+### 2. Install dependencies
+
+```bash
+pip install tensorflow keras keras-hub numpy matplotlib kagglehub jupyter
+```
+
+### 3. Download the notebook
+
+Open `CNN_Age_classification_Project.ipynb` in Jupyter Notebook or upload it to Google Colab.
+
+### 4. Download and prepare the dataset
+
+The notebook uses KaggleHub and also contains Kaggle CLI download commands. Use one download method and make sure the dataset is extracted into the expected directory structure.
+
+Expected structure:
+
+```text
+project/
+├── CNN_Age_classification_Project.ipynb
+├── train/
+│   ├── class_1/
+│   ├── class_2/
+│   └── ...
+└── test/
+    ├── class_1/
+    ├── class_2/
+    └── ...
+```
+
+The actual class directory names should come from the downloaded dataset. If you run the notebook in Google Colab, check that its dataset paths match the directories created after extraction.
+
+### 5. Run the notebook
+
+Run the notebook cells in order to load the data, inspect sample images, build the CNN, train it, and evaluate the model.
+
+## Evaluation
+
+The notebook evaluates the model on the test dataset and reports:
+
+- **Test loss**
+- **Test accuracy**
+
+It also plots training versus validation accuracy and loss across epochs and displays an example image with its actual and predicted class labels.
+
+Actual evaluation scores depend on the training run and are not stated here because they should be taken from your notebook output.
+
+## Project Structure
+
+```text
+.
+└── CNN_Age_classification_Project.ipynb
+```
+
+## Future Improvements
+
+- Add a confusion matrix and per-class precision, recall, and F1-score.
+- Save the best model checkpoint for reuse.
+- Test transfer learning with a pretrained image model.
+- Improve data augmentation and tune hyperparameters.
+- Add a simple interface for uploading an image and viewing the predicted age group.
+
+## Limitations
+
+- Predictions depend on the quality, balance, and labeling of the dataset.
+- Performance may vary across different lighting conditions, poses, and image qualities.
+- This is an age-group classification experiment, not a reliable way to determine a person's exact age.
+- Predictions should not be used as the sole basis for consequential decisions.
