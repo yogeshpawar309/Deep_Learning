@@ -1,136 +1,116 @@
-# CNN Age-Group Classification from Face Images
+# 🍕 Pizza and Ice Cream Image Classification using CNN
 
-## Project Overview
+## 📌 Project Overview
 
-This project uses a **Convolutional Neural Network (CNN)** to classify face images into age groups. It uses TensorFlow/Keras to prepare image datasets, train a CNN model, and evaluate its performance on test images.
+This project uses **Convolutional Neural Networks (CNNs)** to classify food images into two categories: **Pizza** and **Ice Cream**. The model is developed using Python, TensorFlow, and Keras to learn visual patterns from images and predict the correct food category.
 
-The notebook demonstrates an end-to-end deep learning workflow, from downloading the dataset to visualizing training results and comparing an image's actual label with the model's prediction.
+The project demonstrates an end-to-end deep learning workflow, including dataset downloading, image preprocessing, data augmentation, CNN model building, model training, and performance evaluation.
 
-## Objectives
+## 🎯 Objectives
 
-- Load and prepare face images for classification.
-- Split the training data into training and validation sets.
-- Build and train a CNN using Keras.
-- Evaluate the trained model on a test dataset.
-- Visualize training/validation accuracy and loss.
-- Display an example prediction alongside its actual class.
+- Classify images into Pizza and Ice Cream categories.
+- Build a CNN model for image classification.
+- Apply image resizing, normalization, and data augmentation.
+- Train and validate the model using a labeled image dataset.
+- Evaluate model performance on test data.
+- Visualize training and validation accuracy and loss.
 
-## Technologies Used
+## 🛠️ Technologies Used
 
-- Python
-- TensorFlow
-- Keras
-- NumPy
-- Matplotlib
-- KaggleHub / Kaggle dataset tools
-- Jupyter Notebook or Google Colab
+- **Programming Language:** Python
+- **Deep Learning:** TensorFlow, Keras
+- **Computer Vision:** CNN
+- **Libraries:** NumPy, Matplotlib
+- **Dataset Download:** KaggleHub / Kaggle API
+- **Model Saving:** Keras model format (`.keras`)
 
-## Dataset
+## 📂 Dataset
 
-The notebook uses the Kaggle dataset **Age Detection Human Faces (18–60 Years)**:
+The project uses the Pizza vs Ice Cream dataset available on Kaggle.
 
-[Open the dataset on Kaggle](https://www.kaggle.com/datasets/trainingdatapro/age-detection-human-faces-18-60-years)
+**Dataset:** [Pizza vs Ice Cream – Kaggle](https://www.kaggle.com/datasets/hemendrasr/pizza-vs-ice-cream)
 
-The notebook expects the extracted dataset to contain `train` and `test` directories, organized into class-specific subdirectories. Keras infers class labels from those directory names.
+The images are organized into training, validation, and testing datasets for model development and evaluation.
 
-> Note: The notebook's output layer contains five classes. Confirm that the dataset's folder names and number of classes match this configuration before training.
+## ⚙️ Project Workflow
 
-## Model Architecture
+1. **Dataset Acquisition:** Download the image dataset from Kaggle.
+2. **Data Preprocessing:** Load images, resize them to 224 × 224 pixels, and assign labels.
+3. **Data Augmentation:** Apply random rotation and zoom to improve training data diversity.
+4. **CNN Architecture:** Build a sequential CNN using convolutional, pooling, and dense layers.
+5. **Model Compilation:** Use the Adam optimizer, categorical cross-entropy loss, and accuracy metric.
+6. **Model Training:** Train the model for up to 50 epochs with early stopping and model checkpointing.
+7. **Model Evaluation:** Evaluate the trained model on test data.
+8. **Visualization:** Plot training and validation accuracy and loss to analyze model performance.
+
+## 🧠 Model Architecture
 
 The CNN model includes:
 
-1. **Input layer:** RGB images resized to `224 × 224`.
-2. **Data augmentation:** Random rotation and random zoom.
-3. **Rescaling:** Pixel values are scaled by `1/255`.
-4. **Convolutional layers:** Three `Conv2D` layers with 128, 256, and 512 filters, each followed by max pooling.
-5. **Classification layers:** Flatten layer and dense layers with 256, 128, and 64 units.
-6. **Output layer:** Five units with softmax activation.
+- Input layer for 224 × 224 RGB images
+- Data augmentation layers
+- Pixel normalization using rescaling
+- Convolutional layers for feature extraction
+- Max-pooling layers for dimensionality reduction
+- Dense layers for classification
+- Output layer for two-class prediction
 
-### Training configuration
+## 📊 Model Evaluation
 
-| Setting | Value |
-|---|---|
-| Image size | 224 × 224 |
-| Batch size | 16 |
-| Validation split | 20% of the training directory |
-| Optimizer | Adam |
-| Loss function | Categorical cross-entropy |
-| Metric | Accuracy |
-| Epochs | Up to 50 |
+The model is evaluated using:
 
-## Installation and Setup
+- Training accuracy
+- Validation accuracy
+- Test accuracy
+- Training and validation loss curves
+
+*Note: Actual accuracy and loss values should be added after running the notebook. No performance figures are assumed.*
+
+## 🚀 How to Run the Project
 
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
-cd <your-repository-folder>
+git clone <your-github-repository-url>
+cd <your-repository-name>
 ```
 
 ### 2. Install dependencies
 
 ```bash
-pip install tensorflow keras keras-hub numpy matplotlib kagglehub jupyter
+pip install numpy matplotlib tensorflow keras keras-hub kagglehub
 ```
 
-### 3. Download the notebook
+### 3. Open the notebook
 
-Open `CNN_Age_classification_Project.ipynb` in Jupyter Notebook or upload it to Google Colab.
+Launch Jupyter Notebook:
 
-### 4. Download and prepare the dataset
-
-The notebook uses KaggleHub and also contains Kaggle CLI download commands. Use one download method and make sure the dataset is extracted into the expected directory structure.
-
-Expected structure:
-
-```text
-project/
-├── CNN_Age_classification_Project.ipynb
-├── train/
-│   ├── class_1/
-│   ├── class_2/
-│   └── ...
-└── test/
-    ├── class_1/
-    ├── class_2/
-    └── ...
+```bash
+jupyter notebook
 ```
 
-The actual class directory names should come from the downloaded dataset. If you run the notebook in Google Colab, check that its dataset paths match the directories created after extraction.
+Open `Pizza and Ice cream Image classification_Project.ipynb` and run the cells in sequence.
 
-### 5. Run the notebook
+**Note:** The notebook contains Google Colab paths and Kaggle download commands. Update dataset paths and configure Kaggle authentication as needed for your environment.
 
-Run the notebook cells in order to load the data, inspect sample images, build the CNN, train it, and evaluate the model.
+## 💾 Model Saving
 
-## Evaluation
+The best-performing model is saved as `pizza.keras` using model checkpointing based on validation loss.
 
-The notebook evaluates the model on the test dataset and reports:
+## 🔮 Future Improvements
 
-- **Test loss**
-- **Test accuracy**
+- Add more food categories to support multi-class classification.
+- Experiment with transfer learning using pretrained CNN architectures.
+- Improve generalization through hyperparameter tuning.
+- Deploy the model using Streamlit or Flask.
+- Build an interface where users can upload an image and receive a prediction.
 
-It also plots training versus validation accuracy and loss across epochs and displays an example image with its actual and predicted class labels.
+## 👨‍💻 Author
 
-Actual evaluation scores depend on the training run and are not stated here because they should be taken from your notebook output.
+**Your Name**
 
-## Project Structure
+Aspiring Data Scientist | Machine Learning | Deep Learning | Computer Vision
 
-```text
-.
-└── CNN_Age_classification_Project.ipynb
-```
+---
 
-## Future Improvements
-
-- Add a confusion matrix and per-class precision, recall, and F1-score.
-- Save the best model checkpoint for reuse.
-- Test transfer learning with a pretrained image model.
-- Improve data augmentation and tune hyperparameters.
-- Add a simple interface for uploading an image and viewing the predicted age group.
-
-## Limitations
-
-- Predictions depend on the quality, balance, and labeling of the dataset.
-- Performance may vary across different lighting conditions, poses, and image qualities.
-- This is an age-group classification experiment, not a reliable way to determine a person's exact age.
-- Predictions should not be used as the sole basis for consequential decisions.
+⭐ If you find this project useful, consider giving the repository a star!
